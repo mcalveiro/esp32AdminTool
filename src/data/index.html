@@ -2,7 +2,6 @@
 <html lang="es">
 <!-- BEGIN HEAD-->
 <head>
-
     <meta charset="UTF-8" />
     <title>ESP32 Admin Web Tool </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -16,6 +15,8 @@
     <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="MoneAdmin.css" />
     <link rel="stylesheet" href="font-awesome.css" />
+    <link rel="stylesheet" href="styles.css" />
+
     <!--END GLOBAL STYLES -->
     <!-- PAGE LEVEL STYLES -->
     <link href="layout2.css" rel="stylesheet" />
@@ -77,7 +78,7 @@
                 <br />
             </div>
             <ul id="menu" class="collapse">
-                 <li class="panel">
+                 <li class="panel active">
                     <a href="/" >
                         <i class="icon-th-large"></i> Dashboard
 	                </a>
@@ -124,7 +125,89 @@
                         <h2>Estado de Dispositivo</h2>
                     </div>
                 </div>
-                <hr />
+                <hr>                
+                <!--BLOCK SECTION -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div style="text-align: center;">
+                            <a class="quick-btn" href="#">
+                                <i class=" icon-info-sign icon-2x"></i>
+                                <span>Dispositivo</span>
+                                <span class="label label-success">ESP32</span>
+                            </a>
+                            <a class="quick-btn" href="#">
+                                <i class="icon-signal icon-2x"></i>
+                                <span>WiFi RSSI</span>
+                                <span class="label label-warning">-66 dBm</span>
+                            </a>
+                            <a class="quick-btn" href="#">
+                                <i class="icon-sitemap icon-2x"></i>
+                                <span>MQTT</span>
+                                <span class="label btn-metis-2">Online</span>
+                            </a>
+                            <a class="quick-btn" href="#">
+                                <i class="icon-fire icon-2x"></i>
+                                <span>Temp CPU</span>
+                                <span class="label label-danger">53.33 °C</span>
+                            </a>
+                            <a class="quick-btn" href="#">
+                                <i class="icon-retweet icon-2x"></i>
+                                <span>Reinicios</span>
+                                <span class="label btn-metis-4">9</span>
+                            </a>
+                            <a class="quick-btn" href="#">
+                                <i class="icon-time icon-2x"></i>
+                                <span>Tiempo Activo</span>
+                                <span class="label label-default">1.18:35:32</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--END BLOCK SECTION -->
+                <hr>
+                <br>
+                <!-- PANEL TABS SECTION -->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class=" icon-info-sign"></i>
+                            Información General
+                            <span class="badge pull-right">adminesp32 / 9B1C5210CE0C3D</span>
+                        </div>
+                        <div class="panel-body">
+                            <h3>Inalambrico</h3>
+                            <div><span class="label label-primary">Estado WiFi:</span> <span id="WFEstatus"><span class="label label-success">CONECTADO</span></span></div>
+                            <div><span class="label label-primary">Red WiFI:</span><span> Casa: Marqués </span></div>
+                            <div><span class="label label-primary">IP WiFi:</span><span> 192.168.100.2 </span></div>
+                            <div><span class="label label-primary">MAC WiFI:</span><span> 10:52:1C:9B:3D:0C </span></div>
+                            <div><span class="label label-primary">RSSI WiFI:</span><span> -66 dBm </span></div>
+                            <div><span class="label label-primary">Señal WiFI:</span><span> 68 % </span></div>
+                            <hr>
+                            <h3>Broker MQTT</h3>
+                            <div><span class="label label-primary">Estado MQTT:</span> <span id="WFEstatus"><span class="label label-success">CONECTADO</span></span></div>
+                            <div><span class="label label-primary">Servidor MQTT:</span><span> edgecore.com.ar </span></div>
+                            <div><span class="label label-primary">Usuario MQTT:</span><span> coresys_iot </span></div>
+                            <div><span class="label label-primary">Cliente ID MQTT:</span><span> ESP329B1C52100C3D </span></div>
+                            <hr>
+                            <h3>Información General</h3>                            
+                            <div><span class="label label-primary">Identificación:</span><span> adminesp32 </span></div>
+                            <div><span class="label label-primary">Número de serie:</span><span> XXXXXXXXXXXX </span></div>
+                            <div><span class="label label-primary">mDNS Url:</span><span> http://adminesp32.local </span></div>
+                            <div><span class="label label-primary">Dirección IP del Cliente:</span><span> xxx.xxx.x.xxx </span></div>
+                            <div><span class="label label-primary">Navegador del Cliente:</span><span> coresys_iot </span></div>
+                            <div><span class="label label-primary">Versión del Firmware:</span><span> v1.1.0a-Build-2022-xxxx </span></div>
+                            <div><span class="label label-primary">SDK:</span><span> v3.3.5-1g8c43024c </span></div>
+                            <div><span class="label label-primary">Versión del Hardware:</span><span> ADMINESP32 v1 </span></div>
+                            <div><span class="label label-primary">CPU FREQ:</span><span> 240 MHz </span></div>
+                            <div><span class="label label-primary">RAM SIZE:</span><span> 341.22 KB </span></div>
+                            <div><span class="label label-primary">FLASH SIZE:</span><span> 4.00 MB </span></div>
+                            <div><span class="label label-primary">Fabricante:</span><span> Coresys Technologies </span></div>
+                            <div><span class="label label-primary">Tiempo de Actividad del Sistema:</span><span> 1:22:15:40 </span></div>
+                            <div><span class="label label-primary">Cantidad de Reinicios:</span><span> X </span></div>
+                        </div>
+                    </div>
+                </div>
+           <!-- END PANEL TABS SECTION -->
             </div>
         </div>
        <!--END PAGE CONTENT -->
@@ -175,7 +258,9 @@
     <script src="jquery-2.0.3.min.js"></script>
      <script src="bootstrap.min.js"></script>
     <script src="modernizr-2.6.2.min.js"></script>
+    <script src="scripts.js"></script>
     <!-- END GLOBAL SCRIPTS -->
 </body>
-    <!-- END BODY-->
+<!-- END BODY-->
+
 </html>
